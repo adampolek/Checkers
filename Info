@@ -1,0 +1,22 @@
+1. Singleton ++ - Warcabnica (plansza). W ten sposób w naszym projekcie ograniczymy się tylko do pojedynczej instancji tej klasy. Będzie w sobie zawierać jakieś statystyki, ale przedewszystkim kolekcję, która będzie przechowywała pozycję pionków na mapie. W ten sposób unikniemy ewentualnej duplikacji planszy.
+
+2. Strategia ++ - Za pomocą tego wzorca zrealizujemy sposób trudności rozgrywki.
+ W menu przed rozpoczęciem rozgrywki, będzie możliwość zaznaczenia stopnia
+ trudności. Trudność będzie realizowana za pomocą skróconego czasu na ruch oraz
+ wymuszeniu bicia pionków.
+
+3. Pyłek ++
+
+4. Proxy (Pelnomocnik)(może)
+
+5. Most --
+
+6. Dekorator ++
+
+7. Iterator --
+
+8.Command - (Pamiatka) Undo - Redo ++ 
+
+9.Metoda Szablonowa - Do kontrolowania truy gracza.
+
+10. Obserwator(Skurwol) - Kontroluje czy został przekroczony czas gracza, oraz czy wystepuje mozliwosc bicia tzw. Fuch.

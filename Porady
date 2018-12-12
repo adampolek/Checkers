@@ -1,0 +1,14 @@
+ 1* Czy obserwator moglby sprawdzac czy jest mozliwosc fuchu. W zaleznosci od
+  Strategii. Caly czas odczytuje czas.
+ 
+2* Propozycja wzorca Memento, ktory zapamietuje stan planszy. To by posluzylo
+ tworzenia saveow i roznych rozgrywek. A Skoro Game byloby Singletonem to czy 
+ nie klocilo sie z sytuacja, ze Game juz niebyloby Singletonem.
+ Ewentualnie Zrobic board jako singleton i można byłoby zrobic wiele Game klas 
+ z singletonem board.
+
+ 3.Wspomnieć o statystykach jako singleton.
+
+ 4.Koncepcja stworzenia Main klasy zawirajacej Game, Statystyki, Jakies Opcje.
+
+ 5.Relacja mnogosic

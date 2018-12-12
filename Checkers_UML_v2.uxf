@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>544</y>
+      <w>144</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-Name: string
+-Score: int
+--
++getPlayer()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>240</y>
+      <w>200</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>MoveEngine (Singleton)
+--
+-MoveEngine: moveEngine
+--
++canNormalMove()
++canNormalJump()
++canKingMoveJump()
++checkKingMove()
++getMoveEngine()
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1112</x>
+      <y>112</y>
+      <w>176</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Decorator (Decorator)
+--
+-IPiece: iPieice
+--
++void (Graphic2D g,int x,int y)
++IPiece getPiece()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>144</y>
+      <w>232</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Ob(Observer)
+--
++checkTime()
+//+checkFuch()
+//SLuzy do ostrzezenia czasem// Zegar jest obiektem obserwowanym
+//jakies ostrzezenia ze zostalo ile czasu na ruch.
+// Iterator Bialych i czarnych.
+// Memento - jako zapisuje stan gry, kto sie rusza.- odzielna klasa na opkowanie co szeroki interfejs a co waski
+// Kompozyt do ruchow do zapmietania wielokrotengo ruchu-bicie.
+// </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>216</y>
+      <w>192</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Piece (Flyweight)
+--
+-index: Integer
+-image: Image
+-pool: HashMap&lt;Integer, Piece&gt;
+-boolean: canJump
+--
++void draw()
++Piece getPiece()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>712</y>
+      <w>240</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Statistic (Singleton)
+--
+-PLayer&lt;&gt;: players
+-HashMap: globalScore&lt;Player,Integer&gt;
+--
+addSocre()
+removeScore()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>384</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Board
+-board: HasMap&lt;Point, Piece&gt;
+
+--
++getBoard()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>936</x>
+      <y>312</y>
+      <w>48</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..32</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>400</y>
+      <w>160</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+-Board: board
+-Player&lt;&gt;: playersInGame
+-MoveEngine: moveEngine
+-Strategy : strategia
+
+// moveengine do Game i Game jako singleton.
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>448</y>
+      <w>96</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+
+
+
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>464</y>
+      <w>96</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=2</panel_attributes>
+    <additional_attributes>100.0;10.0;40.0;10.0;40.0;170.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>856</x>
+      <y>104</y>
+      <w>208</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>/IPiece/
+--
++void draw(Graphic2D g,int x,int y)
++IPiece getPiece()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1056</x>
+      <y>120</y>
+      <w>72</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1104</x>
+      <y>216</y>
+      <w>176</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>TransformDecorator
+--
++void (Graphic2D g,int x,int y)
++IPiece getPiece()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1184</x>
+      <y>176</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>152</y>
+      <w>24</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>344</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>648</y>
+      <w>24</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>536</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Strategy
+--
+--
++ AlgorithmInterface()
+
+// Pulla na wszystkie ruchy
+//W zaleznosci od ilosci Pionków
+//Rozne algorytmy
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>480</y>
+      <w>72</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+strategy</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>656</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>EasyMode
+--
++ AlgorithmInterface() </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>656</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>MediumMode
+--
++ AlgorithmInterface() </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>656</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>HardMode
+--
++ AlgorithmInterface() </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>584</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>584</y>
+      <w>216</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;250.0;70.0;250.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>584</y>
+      <w>384</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;460.0;70.0;460.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>328</y>
+      <w>80</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>/Command/
+--
+--
++Execute()
++Undo()
++Redo()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>440</y>
+      <w>80</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>NormalMove
+--
+--
++Execute
++Undo
++Redo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>384</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>336</x>
+      <y>328</y>
+      <w>184</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>CommandManager
+--
+-Stack&lt;Command&gt; undoStack
+-Stack&lt;Command&gt; redoStack
+--
++Execute(Command command)
++Undo()
++Redo()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>408</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>440</y>
+      <w>80</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>KingMove
+--
+--
++Execute
++Undo
++Redo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>408</y>
+      <w>112</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>120.0;40.0;120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>368</y>
+      <w>136</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1016</x>
+      <y>392</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>jednak board może 
+byc singletonem ??
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>688</x>
+      <y>104</y>
+      <w>144</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Stan zewnętzrny 
+współrzędne x,y
+przechowywanie w
+board w HashMapie(Point)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>824</x>
+      <y>136</y>
+      <w>48</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>704</x>
+      <y>176</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Stan wewnętrzny 
+index</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>224</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1064</x>
+      <y>288</y>
+      <w>120</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>if pool[key] exist
+return existing Piece
+else create new Piece
+and add it to pool
+return new Piece</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1016</x>
+      <y>304</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1208</x>
+      <y>320</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Decoratory zminiają 
+metode draw()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1256</x>
+      <y>264</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>760</x>
+      <y>504</y>
+      <w>64</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Kontekst</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>480</y>
+      <w>72</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;70.0;40.0</additional_attributes>
+  </element>
+</diagram>
